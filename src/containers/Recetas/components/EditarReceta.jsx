@@ -361,7 +361,7 @@ const ModalComponent = ({ recetas, color, setModal, abierto, receta, tiposMascot
                     <div className="form__form-group mb-5">
                       <div className="square mb-4">
                         <div className="content">
-                          <img src={`http://localhost:4000/static/${receta.imagen}`} alt="img-receta" />
+                          <img src={`${process.env.REACT_APP_BACKEND_URL}/static/${receta.imagen}`} alt="img-receta" />
                           <h5 className="delete-pet text-center mt-2" onClick={() => eliminarImagen()}>
                             <span className="lnr lnr-circle-minus mr-2"></span>Eliminar Imagen
                           </h5>
