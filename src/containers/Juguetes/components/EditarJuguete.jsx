@@ -334,7 +334,7 @@ const ModalComponent = ({ juguetes, color, readonly, abierto, setModal, juguete,
                     <div className="form__form-group mb-5">
                       <div className="square mb-4">
                         <div className="content">
-                          <img src={`http://localhost:4000/static/${juguete.imagen}`} alt="img-juguete" />
+                          <img src={`${process.env.REACT_APP_BACKEND_URL}/static/${juguete.imagen}`} alt="img-juguete" />
                           <h5 className="delete-pet text-center mt-2" onClick={() => eliminarImagen()}>
                             <span className="lnr lnr-circle-minus mr-2"></span>Eliminar Imagen
                           </h5>
