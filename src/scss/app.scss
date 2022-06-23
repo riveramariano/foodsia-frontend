@@ -1,0 +1,42 @@
+@import 'settings/variable';  //themes' colors
+
+//base...
+@import 'generic/normalize.scss';
+@import 'generic/box-sizing.scss';
+@import './base/scaffolding';         // styles of base elements
+@import './base/typography';          // base styles of h1-h6, p, span
+
+//components...
+@import 'component/btn';
+@import './component/calendar.scss';
+@import './component/card';
+@import './component/check-box';
+@import './component/date-picker';
+@import './component/dropdown';
+@import './component/dropzone';
+@import './component/form';
+@import './component/inbox';
+@import './component/load';
+@import './component/modal';
+@import './component/pagination';
+@import './component/panel';
+@import './component/progress-bar';
+@import './component/react-select'; // Causa Bug en la pantalla de graficos
+@import 'component/select-options';
+@import './component/sidebar';
+@import './component/table';
+@import './component/tabs';
+@import 'component/toggle-btn';
+@import './component/topbar';
+
+//pages...
+@import 'containers/account';
+@import 'containers/dashboard';
+@import 'containers/landing';
+@import 'containers/product-card';
+
+//objects...
+@import 'objects/layout.scss';
+
+//login-logo
+@import 'component/index';
