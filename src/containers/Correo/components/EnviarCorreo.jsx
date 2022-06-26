@@ -18,6 +18,7 @@ const RecUsuarioForm = () => {
   const history = useHistory();
 
   const enviarCorreo = async (data) => {
+    data.correo = data.correo.toLowerCase();
     try {
       await Axios.post("/api/recuperarCredenciales", data);
       mensajeVerificacion(data.correo);
@@ -61,7 +62,7 @@ const RecUsuarioForm = () => {
             type="email"
             name="correo"
             className={`${errors.correo ? "danger" : ""}`}
-            placeholder="Ingrese su correo electrónico"
+            placeholder="Correo electrónico (xxxx@xxx.xxx)"
             {...register("correo", { required: true })}
           />
         </div>
