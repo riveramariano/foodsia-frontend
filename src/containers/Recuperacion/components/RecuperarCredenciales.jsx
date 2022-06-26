@@ -42,6 +42,7 @@ const RecUsuarioForm = () => {
 
   const recuperarCredenciales = async (data) => {
   
+    data.correo = data.correo.toLowerCase();
     const correo = await Axios.post(`/api/recuperarCredenciales/validar/correo`, data);
     const empleados = await Axios.get("/api/recuperarCredenciales/listar-empleados");
 
@@ -230,7 +231,7 @@ const RecUsuarioForm = () => {
             type="text"
             name="correo"
             className={`${errors.correo ? "danger" : ""}`}
-            placeholder="Correo electrónico"
+            placeholder="Correo electrónico (xxxx@xxx.xxx)"
             {...register("correo", { required: true })}
           />
         </div>
@@ -323,6 +324,7 @@ const RecUsuarioForm = () => {
                 className={`${errors.usuario ? "danger" : ""}`}
                 placeholder="Nombre de usuario"
                 {...register("usuario", { required: true })}
+                style={{ textTransform: "lowercase" }}
               />
             </div>
             {errors.usuario && (
@@ -345,6 +347,7 @@ const RecUsuarioForm = () => {
                 className={`${errors.repetirUsuario ? "danger" : ""}`}
                 placeholder="Repetir nombre de usuario"
                 {...register("repetirUsuario", { required: true })}
+                style={{ textTransform: "lowercase" }}
               />
             </div>
             {errors.repetirUsuario && (
