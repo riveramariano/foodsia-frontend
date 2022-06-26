@@ -455,6 +455,7 @@ const ModalComponent = ({ proveedores, color, setModal, abierto, proveedor, read
                               required: true,
                               onChange: nuevosCambios,
                             })}
+                            style={{ textTransform: "lowercase" }}
                           />
                           {errors.correoElectronico && (
                             <span className="form__form-group-error">
