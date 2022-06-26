@@ -607,6 +607,7 @@ const ModalComponent = ({ usuario, empleados, empleado, tiposUsuario, abierto, r
                               required: true,
                               onChange: nuevosCambios,
                             })}
+                            style={{ textTransform: "lowercase" }}
                             disabled={!mostrarCamposExclusivos()}
                           />
                           {errors.correoElectronico && (
@@ -639,6 +640,7 @@ const ModalComponent = ({ usuario, empleados, empleado, tiposUsuario, abierto, r
                               required: true,
                               onChange: nuevosCambios,
                             })}
+                            style={{ textTransform: "lowercase" }}
                             disabled={!mostrarCamposExclusivos()}
                           />
                           {errors.usuario && (
