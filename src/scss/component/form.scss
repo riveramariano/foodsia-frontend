@@ -201,6 +201,22 @@
   }
 }
 
+::-webkit-input-placeholder {
+  text-transform: initial;
+}
+
+:-moz-placeholder { 
+  text-transform: initial;
+}
+
+::-moz-placeholder {  
+  text-transform: initial;
+}
+
+:-ms-input-placeholder { 
+  text-transform: initial;
+}
+
 .form__form-group {
   margin-bottom: 20px;
   width: 100%;
