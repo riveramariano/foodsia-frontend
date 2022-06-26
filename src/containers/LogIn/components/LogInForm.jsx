@@ -42,6 +42,7 @@ const LogInForm = () => {
   };
 
   const guardar = async (data) => {
+    data.usuario = data.usuario.toLowerCase();
     const { usuario, contrasenna } = data;
     iniciarSesion({ usuario, contrasenna });
   };
