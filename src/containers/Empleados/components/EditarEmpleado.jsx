@@ -677,7 +677,7 @@ const ModalComponent = ({ usuario, empleados, empleado, tiposUsuario, abierto, r
                                 placeholder="Tipo de usuario"
                                 classNamePrefix="react-select"
                                 isClearable={true}
-                                isDisabled={!mostrarCamposExclusivos()}
+                                isDisabled={usuario[0].id === empleado.id ? true : !mostrarCamposExclusivos()}
                               />
                             )}
                           />
