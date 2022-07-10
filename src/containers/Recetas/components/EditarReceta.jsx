@@ -39,7 +39,7 @@ const esquema = yup.object().shape({
   tipoMascota: yup.object().required("Campo obligatorio *"),
   }).required();
 
-const ModalComponent = ({ recetas, color, setModal, abierto, receta, tiposMascota, readonly }) => {
+const ModalComponent = ({ productos, color, setModal, abierto, receta, tiposMascota, readonly }) => {
 
   const { register, handleSubmit, formState: { errors }, control } = useForm({ resolver: yupResolver(esquema) });
   const [opcionesTipoMascota] = useState([]);
@@ -159,10 +159,10 @@ const ModalComponent = ({ recetas, color, setModal, abierto, receta, tiposMascot
 
   const validacionesDuplicados = (nombre) => {
     if (receta.id) {
-      const nombreDuplicado = recetas.filter((r) => r.id !== receta.id && r.nombreProducto === nombre.trimEnd());
+      const nombreDuplicado = productos.filter((r) => r.id !== receta.id && r.nombreProducto === nombre.trimEnd());
       if (nombreDuplicado.length) { duplicado(); return false; }
     } else {
-      const nombreDuplicado = recetas.filter((r) => r.nombreProducto === nombre.trimEnd());
+      const nombreDuplicado = productos.filter((r) => r.nombreProducto === nombre.trimEnd());
       if (nombreDuplicado.length) { duplicado(); return false; }
     }
     return true;
@@ -245,7 +245,7 @@ const ModalComponent = ({ recetas, color, setModal, abierto, receta, tiposMascot
     Swal.fire({
       icon: "info",
       title: "Información Duplicada",
-      text: "El nombre de la receta ya existe.",
+      text: "Ese nombre ya pertecenece a una receta o juguete.",
       showCancelButton: false,
       confirmButtonColor: "#238484",
       confirmButtonText: "Confirmar",
