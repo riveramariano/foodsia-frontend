@@ -10,6 +10,7 @@ const TablaRecetas = () => {
 
   const [recetas, setRecetas] = useState([]);
   const [recetasFiltradas, setRecetasFlitradas] = useState([]);
+  const [productos, setProductos] = useState([]);
   const [tiposMascota, setTiposMascota] = useState([]);
   const history = useHistory();
 
@@ -26,11 +27,13 @@ const TablaRecetas = () => {
     let isMounted = true; // Verificar si el componente está activo o no
     (async () => {
       const recetas = await Axios.get("/api/recetas");
+      const productos = await Axios.get("/api/recetas/lista/productos");
       const tiposMascota = await Axios.get("/api/tiposMascota");
       if (isMounted) {
         // Actualizar los states únicamente si el componente está activo
         setRecetas(recetas.data.rows);
         setRecetasFlitradas(recetas.data.rows);
+        setProductos(productos.data.rows);
         setTiposMascota(tiposMascota.data.rows.filter((t) => ["Atlético", "Cachorro", "Normal", "Sobrepeso"].includes(t.nombreTipoMascota)));
       }
     })();
@@ -50,6 +53,7 @@ const TablaRecetas = () => {
           <Row>
             <EstructuraTabla 
               recetas={recetas}
+              productos={productos}
               tiposMascota={tiposMascota} 
               recetasFiltradas={recetasFiltradas}
               setRecetasFiltradas={setRecetasFlitradas}
