@@ -11,7 +11,7 @@ import { Row, Card, CardBody, Col, Badge } from "reactstrap";
 import { useTable, useGlobalFilter, usePagination, useSortBy, useResizeColumns, useRowSelect } from "react-table";
 import RouteContext from "../../../context/routing/routeContext";
 
-const EstructuraTabla = ({ recetas, tiposMascota, recetasFiltradas, setRecetasFiltradas }) => {
+const EstructuraTabla = ({ recetas, productos, tiposMascota, recetasFiltradas, setRecetasFiltradas }) => {
 
   const [abrirModal, setModal] = useState(false);
   const [readonly, setReadonly] = useState(false);
@@ -330,7 +330,7 @@ const EstructuraTabla = ({ recetas, tiposMascota, recetasFiltradas, setRecetasFi
           {/* Modal Agregar / Editar Receta */}
           {abrirModal && (
             <EditarReceta
-              recetas={recetas}
+              productos={productos}
               color="success"
               setModal={setModal}
               abierto={abrirModal}
