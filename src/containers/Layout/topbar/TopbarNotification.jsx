@@ -19,9 +19,6 @@ const TopbarNotification = ({ notificaciones }) => {
     <div className="topbar__collapse">
       <button className="topbar__btn topbar__btn--mail topbar__btn--new" type="button" onClick={toggleNotification}>
         <NotificationsIcon />
-        <div className="topbar__btn-new-label">
-          <div />
-        </div>
       </button>
       {isCollapsed && (<button className="topbar__back" aria-label="topbar__back" type="button" onClick={toggleNotification} />)}
       <Collapse isOpen={isCollapsed} className="topbar__collapse-content">
