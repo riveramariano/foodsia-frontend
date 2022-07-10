@@ -13,7 +13,7 @@ const esquema = yup.object().shape({
   nombreProveedor: yup.string().max(50, "Máximo 50 caracteres permitidos *").required("Campo obligatorio *"),
   cedulaJuridica: yup.string().max(10, "Cédula Jurídica no válida *").min(10, "Cédula Jurídica no válida *").required("Campo obligatorio *"),
   correoElectronico: yup.string().max(50, "Máximo 50 caracteres permitidos *").email("No es un correo electrónico válido *").required("Correo electrónico obligatorio *"),
-  telefono: yup.string().matches("^[2-8]{1}[1-9]{7}$", "Teléfono no válido *").max(8, "Teléfono no válido *").min(8, "Teléfono no válido *").required("Campo obligatorio *"),
+  telefono: yup.string().matches("^[2-8]{1}[0-9]{7}$", "Teléfono no válido *").max(8, "Teléfono no válido *").min(8, "Teléfono no válido *").required("Campo obligatorio *"),
   direccion: yup.string().max(150, "Máximo 150 caracteres permitidos *").required("Dirección obligatoria *"),
 }).required();
 
