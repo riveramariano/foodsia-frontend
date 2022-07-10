@@ -273,6 +273,7 @@ const ModalComponent = ({ pagoEmpleado, empleados, abierto, readonly, setModal})
                                   selected={field.value}
                                   dateFormat="dd-MM-yyyy"
                                   locale={es}
+                                  maxDate={new Date()}
                                   isClearable
                                 />
                                 )}
