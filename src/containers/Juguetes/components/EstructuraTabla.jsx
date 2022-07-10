@@ -9,7 +9,7 @@ import { Card, CardBody, Col, Badge } from "reactstrap";
 import { useTable, useGlobalFilter, usePagination, useSortBy, useResizeColumns, useRowSelect } from "react-table";
 import RouteContext from "../../../context/routing/routeContext";
 
-const EstructuraTabla = ({ juguetes, tiposMascota, juguetesFlitrados, setJuguetesFlitrados }) => {
+const EstructuraTabla = ({ juguetes, productos, tiposMascota, juguetesFlitrados, setJuguetesFlitrados }) => {
 
   const [abrirModal, setModal] = useState(false);
   const [readonly, setReadonly] = useState(false);
@@ -268,7 +268,7 @@ const EstructuraTabla = ({ juguetes, tiposMascota, juguetesFlitrados, setJuguete
           {/* Modal Agregar / Editar Juguete */}
           {abrirModal && (
             <EditarJuguete
-              juguetes={juguetes}
+              productos={productos}
               color="success"
               readonly={readonly}
               setModal={setModal}
