@@ -135,6 +135,7 @@ const EditarMascota = ({ setCached,  nuevosCambios, register, readonly, mascotas
                                 onChangeRaw={nuevosCambios}
                                 dateFormat="dd-MM-yyyy"
                                 isClearable
+                                maxDate={new Date()}
                                 locale={es}
                               />
                             )}
