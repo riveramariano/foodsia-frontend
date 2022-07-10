@@ -20,19 +20,19 @@ const esquema = yup.object().shape({
     (precio) => String(precio).match(/^\d+(\.\d{1,2})?$/)
   ).max(100000, "No se pueden agregar monto superiores a ₡100,000 *"),
   ingredientes: yup.string().optional(),
-  humedad: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").positive("El porcentaje debe ser mayor a 0 ").test("decimales",
+  humedad: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").min(0, "El porcentaje no puede ser un numero negativo ").test("decimales",
     "La humedad solo puede tener 2 decimales o menos",
       (humedad) => String(humedad).match(/^\d+(.\d{1,2})?$/)
       ).max(100, "Porcentaje no válido *"),
-  proteina: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").positive("El porcentaje debe ser mayor a 0 ").test("decimales",
+  proteina: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").min(0, "El porcentaje no puede ser un numero negativo ").test("decimales",
     "La proteína solo puede tener 2 decimales o menos",
       (proteina) => String(proteina).match(/^\d+(.\d{1,2})?$/)
       ).max(100, "Porcentaje no válido *"),
-  grasaCruda: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").positive("El porcentaje debe ser mayor a 0 ").test("decimales",
+  grasaCruda: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").min(0, "El porcentaje no puede ser un numero negativo ").test("decimales",
     "La grasa solo puede tener 2 decimales o menos",
       (grasaCruda) => String(grasaCruda).match(/^\d+(.\d{1,2})?$/)
       ).max(100, "Porcentaje no válido *"),
-  fibraCruda: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").positive("El porcentaje debe ser mayor a 0 ").test("decimales",
+  fibraCruda: yup.number().typeError("Campo obligatorio ").required("Campo obligatorio").min(0, "El porcentaje no puede ser un numero negativo ").test("decimales",
     "La fibra solo puede tener 2 decimales o menos",
       (fibraCruda) => String(fibraCruda).match(/^\d+(.\d{1,2})?$/)
       ).max(100, "Porcentaje no válido *"),
