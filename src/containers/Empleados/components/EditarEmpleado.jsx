@@ -30,7 +30,7 @@ const ModalComponent = ({ usuario, empleados, empleado, tiposUsuario, abierto, r
       nombre: yup.string().required("Campo obligatorio *"),
       primerApellido: yup.string().required("Campo obligatorio *"),
       segundoApellido: yup.string().optional(),
-      telefono: yup.string().matches("^[2-8]{1}[1-9]{7}$", 'El número de teléfono no es válido')
+      telefono: yup.string().matches("^[2-8]{1}[0-9]{7}$", 'El número de teléfono no es válido')
         .min(8, "Debe tener 8 caracteres obligatoriamente *").max(8, "El número ingresado no es válido *").required(),
       fechaUnion: yup.string().nullable().required("Campo obligatorio *"),
       usuario: yup.string().max(45, "Máximo 45 caracteres permitidos *").required("Campo obligatorio *"),
