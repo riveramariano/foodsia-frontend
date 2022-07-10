@@ -18,7 +18,7 @@ const esquema = yup.object().shape({
   nombre: yup.string().max(30, "El máximo de caracteres es 30 *").required("Campo obligatorio *"),
   primerApellido: yup.string().max(30, "El máximo de caracteres es 30 *").required("Campo obligatorio *"),
   segundoApellido: yup.string().optional(),
-  telefono: yup.string().matches("^[2-8]{1}[1-9]{7}$", 'El número de teléfono no es valido')
+  telefono: yup.string().matches("^[2-8]{1}[0-9]{7}$", 'El número de teléfono no es valido')
   .min(8, "Debe tener 8 caracteres obligatoriamente *").max(8, "El número ingresado no es válido *").required(),
   fechaUnion: yup.string().nullable().required("Campo obligatorio *"),
   canton: yup.object().nullable().required("Campo obligatorio *"),
